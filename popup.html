@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body class="dark">
+    <h3>Volume: <span id="val">100</span>%</h3>
+    <input type="range" id="volumeSlider" min="0" max="1000" value="100">
+    
+    <div class="button-row">
+        <button id="muteBtn">Mute (0)</button>
+        <button id="saveSite">Save Default</button>
+        <button id="darkModeToggle">Light/Dark</button>
+    </div>
+
+    <hr>
+    <h4>Boosted Tabs</h4> <div id="activeTabs" class="list-container"></div>
+
+    <h4>Saved Domain Rules</h4>
+    <div id="savedRules" class="list-container"></div>
+    <button id="resetAll" style="background-color: #555; margin-top: 10px; width: 100%;">Reset All Rules</button>
+
+    <script src="popup.js"></script>
+</body>
+</html>
