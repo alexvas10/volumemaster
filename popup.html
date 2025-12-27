@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="popup.css">
 </head>
 <body class="dark">
@@ -9,16 +10,37 @@
     
     <div class="button-row">
         <button id="muteBtn">Mute (0)</button>
-        <button id="saveSite">Save Default</button>
+        <button id="saveRule">Save Rule</button>
         <button id="darkModeToggle">Light/Dark</button>
     </div>
 
-    <hr>
-    <h4>Boosted Tabs</h4> <div id="activeTabs" class="list-container"></div>
+    <div class="scope-selector">
+        <span>Apply rule to:</span>
+        <label>
+            <input type="radio" name="ruleScope" value="domain" checked> Site-wide
+        </label>
+        <label>
+            <input type="radio" name="ruleScope" value="url"> This URL only
+        </label>
+    </div>
 
-    <h4>Saved Domain Rules</h4>
-    <div id="savedRules" class="list-container"></div>
-    <button id="resetAll" style="background-color: #555; margin-top: 10px; width: 100%;">Reset All Rules</button>
+    <hr>
+
+    <h4>Boosted Tabs</h4>
+    <div id="activeTabs" class="list-container">
+        </div>
+
+    <h4>Saved Rules (Domain/URL)</h4>
+    <div id="savedRules" class="list-container">
+        </div>
+    
+    <div class="backup-section">
+        <button id="exportBtn" title="Download rules as JSON">Export Backup</button>
+        <button id="importBtn" title="Upload rules from JSON">Import Backup</button>
+        <input type="file" id="importFile" style="display:none" accept=".json">
+    </div>
+
+    <button id="resetAll">Reset All Rules</button>
 
     <script src="popup.js"></script>
 </body>

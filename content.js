@@ -11,7 +11,7 @@ if (!window.audioCtx) {
     }
 }
 
-// THIS IS THE MISSING LINK: It listens for the popup slider/keys
+// Listen for volume changes
 chrome.runtime.onMessage.addListener((request) => {
     if (request.volume !== undefined) {
         if (window.audioCtx.state === 'suspended') {
